@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv='refresh'>
+    <title>regex101:build,test,and debug</title>
+</head>
+<body>
+<h1>regular expressions 101</h1>
+<form action="" method="post" autocomplete="on">
+    <label>REGULAR EXPRESSION</label><br>
+    <input  type="text"  name = 'input1' placeholder="insert your regular expression here" style="font-size: 15px;height:50px; width:300px"
+                                value="{{ regexp1 }}"  ><br><br>
+    <label>TEST STRING</label><br>
+    <textarea id="textarea1" name="input2" rows="6" cols="80" placeholder="insert your test string here">{{ stro }}</textarea><br>
+    <button type="submit" >Get Result</button>
+    {% if count!= 0 and regexp1 != "" %}
+        {% if count!=None %}
+            <h3>Result:</h3>
+            <p>Match Found!</p>
+            <h3>Total number of matches found:</h3>
+            <p>Matches {{ count }} Found</p>
+            <h3>All the matches indexes:</h3>
+            {% for i in stri.split("||")  %}
+                    <p>{{ i }}</p>
+            {% endfor %}
+        {% endif %}
+    {% elif count == 0 and regexp != "" %}
+        <h3>Match not Found!</h3>
+    {% endif %}
+
+</form>
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+</body>
+</html>

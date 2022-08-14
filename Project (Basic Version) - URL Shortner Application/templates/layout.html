@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#393e46">
+       <h1 style="font-size: 40px;font-weight: 600;background-image: linear-gradient(to left, #24527a,#e0ebeb);color: transparent;background-clip: text;-webkit-background-clip: text;">URL SHORTENER</h1>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="color:black;background:#e0ebeb">Menu
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" >
+                <li style="background: yellow;border: 1px solid black;"><a href="{{ url_for('shortUrl') }}">Home Page</a></li>
+                <li style ="background: yellow;border: 1px solid black;"><a href="{{ url_for('history_page') }}">History Page</a></li>
+            </ul>
+        </div>
+        <br>
+       {% block content %}
+
+        {% endblock %}
+
+
+</body>
+</html>

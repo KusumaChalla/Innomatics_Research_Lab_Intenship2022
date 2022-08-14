@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HistoryPage
+{% endblock %}
+
+{% block content %}
+
+<h3 style= "color:#f6e4ad;font-size: 35px">Previously Entered Urls and their resultent Shortened Urls</h3>
+<ul>
+    {% for i in  data_table  %}
+        <li style= "color:#e0ebeb;font-size: 25px" >{{ i }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

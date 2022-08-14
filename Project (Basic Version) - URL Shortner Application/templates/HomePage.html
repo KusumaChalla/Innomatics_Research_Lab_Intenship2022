@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block content %}
+<center>
+<div class="container-form">
+  <form role="form" action="" method = "post">
+    <div class="textfield">
+        <label style="color:#e0ebeb;font-size: 25px ">Enter the Url&nbsp;&nbsp;&nbsp;<input type="text" name = "input_1" placeholder="Enter URL to Shorten" value="{{ url_name }}" style="color:black;font-size: 15px;height:50px; width:300px"></label>
+    </div>
+    <div class="textfield">
+      <label style="color:#e0ebeb;font-size: 25px ">Shortened Url&nbsp;<input type="text" id = "copyme"  name = "input_2" placeholder="URL Shortened result" value="{{ short_url }}" style="color:black;font-size: 15px;height:50px; width:300px"></label>
+    </div><br>
+     <div class="button" style = " margin-left:270px">
+     <button style="color:black;background-color:#e0ebeb ;font-size: 15px;" >shorten</button>&nbsp;&nbsp;
+      <button onClick = fun() style="color:black;background-color:#e0ebeb;font-size:15px">copy shorten url </button>
+      </div>
+  </form></div></center>
+<script>
+        function fun(){
+            var copyText = document.getElementById("copyme");
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied the text: " + copyText.value)
+
+}
+if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+
+
+    </script>
+ {% endblock %}

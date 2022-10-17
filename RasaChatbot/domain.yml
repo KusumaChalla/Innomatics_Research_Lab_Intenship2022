@@ -105,11 +105,11 @@ slots:
 forms:
     user_details_form:
       required_slots:
-      - name
-      - number
-      - email
-      - age
-      - gender
+        - name
+        - number
+        - email
+        - age
+        - gender
 
 
 responses:
